@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">Guess The Word</string>
+    <string name="title_description">image showing the title of the main menu of the game</string>
+
+    <!-- Strings related to login -->
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="welcome">"Welcome !"</string>
+    <string name="invalid_username">Not a valid e-mail</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
+
+    <!-- Strings related to the home menu -->
+    <string name="create_game_button_name">CREATE GAME</string>
+    <string name="find_game_button_name">FIND GAME</string>
+    <string name="settings_button_name">SETTINGS</string>
+
+    <!--String related to the game -->
+    <string name="game_chat_message_hint">Enter a guess or a message</string>
+
+</resources>
