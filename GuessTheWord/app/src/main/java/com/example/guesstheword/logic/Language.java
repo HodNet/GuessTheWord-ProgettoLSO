@@ -1,8 +1,27 @@
 package com.example.guesstheword.logic;
 
+import androidx.annotation.NonNull;
+
 public enum Language {
-    it,
-    en,
-    es,
-    de
+    ITALIAN,
+    ENGLISH,
+    SPANISH,
+    GERMAN;
+
+    @NonNull
+    @Override
+    public String toString() {
+        switch (this) {
+            case ITALIAN:
+                return "it";
+            case ENGLISH:
+                return "en";
+            case SPANISH:
+                return "es";
+            case GERMAN:
+                return "de";
+            default:
+                return "";
+        }
+    }
 }
