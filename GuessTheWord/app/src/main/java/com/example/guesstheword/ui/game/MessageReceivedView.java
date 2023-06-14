@@ -12,6 +12,9 @@ import com.example.guesstheword.logic.ServerMessage;
 public class MessageReceivedView extends ChatMessage {
     private final Player sender;
 
+    /**
+     * The message "message" in chat received from the player "sender"
+     */
     public MessageReceivedView(@NonNull String message, @NonNull Player sender) {
         super(message);
         this.sender = sender;

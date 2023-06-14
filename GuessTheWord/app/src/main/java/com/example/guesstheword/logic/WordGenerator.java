@@ -42,13 +42,15 @@ public class WordGenerator {
                     for (int i = 0; i < jsonArray.length(); i++)
                         words.set(i, jsonArray.getString(i));
                 } catch (JSONException exc) {
-                    chat.add(new MessageNotificationView(exc.toString(), Color.RED));
+                    chat.add(new MessageNotificationView("Can't extract random words " +
+                            "for the chooser: " + exc.toString(), Color.RED));
                 }
             }
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                chat.add(new MessageNotificationView(error.toString(), Color.RED));
+                chat.add(new MessageNotificationView("Can't extract random words " +
+                        "for the chooser: " + error.toString(), Color.RED));
             }
         });
     }

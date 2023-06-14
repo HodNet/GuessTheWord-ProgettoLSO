@@ -11,7 +11,7 @@ public abstract class ChatMessage {
     private final String message;
 
     /**
-     * The message "message" written by the player "sender";
+     * The message "message" written;
      */
     public ChatMessage(@NonNull String message) {
         this.message = message;

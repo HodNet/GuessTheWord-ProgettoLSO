@@ -12,9 +12,6 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class GameChat {
-    private static final int WAIT_TIME_IN_MILLISECONDS = 60000;
-    private static final int TIME_PER_ROUND_IN_MILLISECONDS = 30000;
-
     private final Player mainPlayer;
     private final Room room;
     private Game currentGame;
@@ -160,7 +157,7 @@ public class GameChat {
 
     public void updateGame() {
         if (room.isGaming()) {
-            if (currentGame.isRoundFinished(TIME_PER_ROUND_IN_MILLISECONDS)) {
+            if (currentGame.isRoundFinished(Room.TIME_PER_ROUND_IN_MILLISECONDS)) {
                 char revealedLetter = currentGame.revealOneMoreLetter();
                 String notification1 = "letter " + revealedLetter +
                         " revealed. Now the known word is " + currentGame.getIncompleteWord();
@@ -177,7 +174,9 @@ public class GameChat {
         }
     }
 
-    public boolean isWaitTimeFinished
+    public boolean isWaitTimeFinished() {
+
+    }
 
     private void startGame() {
 

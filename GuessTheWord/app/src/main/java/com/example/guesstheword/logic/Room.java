@@ -5,7 +5,8 @@ import androidx.annotation.NonNull;
 import java.util.LinkedList;
 
 public class Room {
-    public final static long timePerRound = 20000;
+    private static final long WAIT_TIME_IN_MILLISECONDS = 60000;
+    public final static long TIME_PER_ROUND_IN_MILLISECONDS = 20000;
 
     private final String name;
     private int numberOfPlayers;
@@ -117,10 +118,10 @@ public class Room {
     /**
      * this function set the given player as the chooser and all the other players as the guesser
      */
-    public void setChooser(Player chooser) {
+    public void setChooser(String chooserUsername) {
         int i=0;
         for (Player player : players) {
-            if (player.equals(chooser)) {
+            if (player.getUsername().equals(chooserUsername)) {
                 player.setState(PlayerState.CHOOSER);
                 indexOfChooser = i;
             }

@@ -12,9 +12,9 @@ public class User {
 
     /**
      * Constructor called to create the profile of the main User.
-     * @param email must respect the RFC 5322 email format
+     * @param email must respect the RFC 5322 email format (unique attribute)
      * @param password at least 5 characters
-     * @param username (unique attribute)
+     * @param username (this will be used as the User ID, as Primary key)
      * @param avatar chosen between n images
      */
     public User(@NonNull String email, @NonNull String password, @NonNull String username, @NonNull ImageView avatar) {

@@ -1,6 +1,6 @@
 package com.example.guesstheword.logic;
 
-public enum WhatHappened {
+public enum  WhatHappened {
     JOINED,
     LEFT
 }
