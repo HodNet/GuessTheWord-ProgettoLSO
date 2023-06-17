@@ -5,7 +5,7 @@ import androidx.annotation.NonNull;
 import java.util.LinkedList;
 
 public class Room {
-    private static final long WAIT_TIME_IN_MILLISECONDS = 60000;
+    public final static long CHOOSING_TIME_IN_MILLISECONDS = 60000;
     public final static long TIME_PER_ROUND_IN_MILLISECONDS = 20000;
 
     private final String name;

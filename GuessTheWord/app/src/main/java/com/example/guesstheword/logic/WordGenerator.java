@@ -14,6 +14,7 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Random;
 
 /**
  * This class extract from the API of "https://random-word-api.herokuapp.com/word" 10 random
@@ -25,11 +26,13 @@ public class WordGenerator {
     private String language;
     private String url = "https://random-word-api.herokuapp.com/word";
     private LinkedList<ChatMessage> chat;
+    private Random randomNumberGenerator;
 
     public WordGenerator(Room room, LinkedList<ChatMessage> chat) {
         language = room.getLanguage().toString();
         url = url + "?number=" + numberOfWords + "&lang=" + language;
         this.chat = chat;
+        randomNumberGenerator = new Random();
     }
 
     public void extractWordsFromInternet() {
@@ -61,5 +64,10 @@ public class WordGenerator {
 
     public List<String> getWords() {
         return words;
+    }
+
+    public String getRandomWord() {
+        int randomIndex = randomNumberGenerator.nextInt(words.size());
+        return words.get(randomIndex);
     }
 }

@@ -122,8 +122,15 @@ public class GameChat {
         room.setIsInGame(false);
         room.resetStateOfAllPlayers();
         currentGame = null;
-        if (room.getNumberOfPlayers() > 1)
-            initialTime = System.currentTimeMillis();
+        if (room.getNumberOfPlayers() > 1) {
+            startChoosingPeriod();
+        }
+    }
+
+    private void startChoosingPeriod() {
+        initialTime = System.currentTimeMillis();
+        //TODO: do a request to the server for the next
+        if (mainPlayer.equals(room.getChooser()))
     }
 
     /**
@@ -162,7 +169,7 @@ public class GameChat {
                 String notification1 = "letter " + revealedLetter +
                         " revealed. Now the known word is " + currentGame.getIncompleteWord();
                 chat.add(new MessageNotificationView(notification1, Color.YELLOW));
-                if(currentGame.isWordFullRevealed()) {
+                if (currentGame.isWordFullRevealed()) {
                     String notification2 = "Nobody guessed the word. " + room.getChooser().getUsername() +
                             " wins the game! (+ " + currentGame.getPointsForChooser() + " points)";
                     chat.add(new MessageNotificationView(notification2, Color.GREEN));
@@ -170,12 +177,22 @@ public class GameChat {
                 }
             }
         } else {
+            if (isChoosingTimeFinished(Room.CHOOSING_TIME_IN_MILLISECONDS)) {
+                //TODO: send the random word to the server
+            } else {
 
+            }
         }
     }
 
-    public boolean isWaitTimeFinished() {
-
+    /**
+     * @param choosingTime in milliseconds
+     * @return true if the time for the chooser is finished (then you have to choose a random word for him), otherwise false
+     */
+    public boolean isChoosingTimeFinished(long choosingTime) {
+        long currentTime = System.currentTimeMillis();
+        long timePassed = currentTime - initialTime;
+        return timePassed >= choosingTime;
     }
 
     private void startGame() {

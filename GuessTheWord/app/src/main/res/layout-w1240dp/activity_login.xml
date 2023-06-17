@@ -2,7 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/container"
+    android:id="@+id/login_container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingLeft="@dimen/activity_horizontal_margin"
@@ -12,7 +12,7 @@
     tools:context=".ui.login.LoginActivity">
 
     <ImageView
-        android:id="@+id/loginTitle"
+        android:id="@+id/login_title"
         android:layout_width="match_parent"
         android:layout_height="512dp"
         android:src="@mipmap/icon"
@@ -22,7 +22,7 @@
         app:layout_constraintEnd_toEndOf="parent"/>
 
     <EditText
-        android:id="@+id/username"
+        android:id="@+id/registration_username"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:hint="@string/prompt_email"
@@ -31,10 +31,10 @@
         android:textSize="48sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/loginTitle"/>
+        app:layout_constraintTop_toBottomOf="@+id/login_title"/>
 
     <EditText
-        android:id="@+id/password"
+        android:id="@+id/registration_password"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -46,7 +46,7 @@
         android:textSize="48sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/username" />
+        app:layout_constraintTop_toBottomOf="@+id/registration_username" />
 
     <Button
         android:id="@+id/login"
@@ -61,7 +61,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/password"
+        app:layout_constraintTop_toBottomOf="@+id/registration_password"
         app:layout_constraintVertical_bias="0.2" />
 
     <ProgressBar
@@ -73,8 +73,8 @@
         android:layout_marginBottom="64dp"
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/password"
-        app:layout_constraintStart_toStartOf="@+id/password"
+        app:layout_constraintEnd_toEndOf="@+id/registration_password"
+        app:layout_constraintStart_toStartOf="@+id/registration_password"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.3" />
 

@@ -10,11 +10,14 @@ import android.widget.EditText;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.guesstheword.databinding.ActivityGameBinding;
+import com.example.guesstheword.logic.GameChat;
+import com.example.guesstheword.logic.WordGenerator;
 
 public class GameActivity extends AppCompatActivity {
     private ActivityGameBinding binding;
 
-    private GameChatView gameChat;
+    private GameChat gameChat;
+    private WordGenerator wordGenerator;
 
     private EditText editGchatMessage;
     private Button buttonGchatSend;
@@ -27,7 +30,7 @@ public class GameActivity extends AppCompatActivity {
         binding = com.example.guesstheword.databinding.ActivityGameBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        gameChat = new GameChatView();
+        gameChat = new GameChat();
 
         editGchatMessage = binding.editGchatMessage;
         buttonGchatSend = binding.buttonGchatSend;

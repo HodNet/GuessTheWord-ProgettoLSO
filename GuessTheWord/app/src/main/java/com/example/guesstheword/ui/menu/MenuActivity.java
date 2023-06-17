@@ -23,4 +23,9 @@ public class MenuActivity extends AppCompatActivity {
         Intent switchActivities = new Intent(this, FindGameActivity.class);
         startActivity(switchActivities);
     }
+
+    public void goToCreateGameActivity(View v) {
+        Intent switchActivities = new Intent(this, CreateGameActivity.class);
+        startActivity(switchActivities);
+    }
 }
