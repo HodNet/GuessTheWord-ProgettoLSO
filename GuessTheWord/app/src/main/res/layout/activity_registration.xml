@@ -11,18 +11,47 @@
     android:paddingBottom="@dimen/activity_vertical_margin"
     tools:context=".ui.login.RegistrationActivity">
 
+    <!-- Default profile image -->
     <ImageView
-        android:id="@+id/registration_title"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/title_height"
-        android:src="@drawable/title"
-        android:contentDescription="@string/title_description"
+        android:id="@+id/imageViewProfile"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:src="@drawable/default_profile_image"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/buttonChangeProfileImage" />
+
+    <!-- Button to change profile image -->
+    <Button
+        android:id="@+id/buttonChangeProfileImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Change Profile Image"
+        app:layout_constraintTop_toBottomOf="@id/imageViewProfile"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/imageGrid"
+        android:onClick="showImageGrid" />
+
+    <!-- Grid of selectable images -->
+    <     androidx.gridlayout.widget.GridLayout
+        android:id="@+id/imageGrid"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@id/buttonChangeProfileImage"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:columnCount="4">
+
+        <!-- Add your selectable images here as ImageViews -->
+
+    </androidx.gridlayout.widget.GridLayout>
 
     <EditText
-        android:id="@+id/registration_username"
+        android:id="@+id/registration_email"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:hint="@string/prompt_email"
@@ -44,7 +73,7 @@
         android:selectAllOnFocus="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/registration_username" />
+        app:layout_constraintTop_toBottomOf="@+id/registration_email" />
 
     <EditText
         android:id="@+id/registration_repeat_password"
