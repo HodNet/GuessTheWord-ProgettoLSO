@@ -13,40 +13,222 @@
 
     <!-- Default profile image -->
     <ImageView
-        android:id="@+id/imageViewProfile"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:src="@drawable/default_profile_image"
+        android:id="@+id/imageViewAvatar"
+        android:layout_width="@dimen/avatar_side_length"
+        android:layout_height="@dimen/avatar_side_length"
+        android:src="@drawable/avatar1"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/buttonChangeProfileImage" />
+        app:layout_constraintStart_toStartOf="parent" />
 
-    <!-- Button to change profile image -->
+    <EditText
+        android:id="@+id/registration_username"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="@string/prompt_username"
+        android:autofillHints="username"
+        android:imeOptions="actionNext"
+        android:inputType="textAutoCorrect"
+        android:selectAllOnFocus="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/imageViewAvatar"
+        app:layout_constraintTop_toTopOf="@+id/imageViewAvatar" />
+
+    <!-- Button to change avatar image -->
     <Button
-        android:id="@+id/buttonChangeProfileImage"
+        android:id="@+id/buttonChangeAvatarImage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Change Profile Image"
-        app:layout_constraintTop_toBottomOf="@id/imageViewProfile"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/imageGrid"
+        android:drawableLeft="@android:drawable/ic_menu_edit"
+        app:layout_constraintStart_toEndOf="@id/imageViewAvatar"
+        app:layout_constraintBottom_toBottomOf="@id/imageViewAvatar"
         android:onClick="showImageGrid" />
 
     <!-- Grid of selectable images -->
-    <     androidx.gridlayout.widget.GridLayout
+    <androidx.gridlayout.widget.GridLayout
         android:id="@+id/imageGrid"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="@dimen/grid_of_avatars_side_length"
+        android:layout_height="@dimen/grid_of_avatars_side_length"
         android:visibility="gone"
-        app:layout_constraintTop_toBottomOf="@id/buttonChangeProfileImage"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:columnCount="4">
+        app:layout_constraintTop_toBottomOf="@id/buttonChangeAvatarImage"
+        app:columnCount="4"
+        app:rowCount="4">
 
-        <!-- Add your selectable images here as ImageViews -->
+        <ImageView
+            android:id="@+id/SelectableAvatarImage1"
+            android:layout_width="@dimen/selectable_avatar_side_length"
+            android:layout_height="@dimen/selectable_avatar_side_length"
+            android:onClick="selectAvatarImage"
+            android:padding="@dimen/grid_of_avatars_padding"
+            android:scaleType="centerCrop"
+            android:src="@drawable/avatar1"
+            app:layout_columnWeight="1"
+            app:layout_rowWeight="1" />
+
+        <ImageView
+            android:id="@+id/SelectableAvatarImage2"
+            android:layout_width="@dimen/selectable_avatar_side_length"
+            android:layout_height="@dimen/selectable_avatar_side_length"
+            android:onClick="selectAvatarImage"
+            android:padding="@dimen/grid_of_avatars_padding"
+            android:scaleType="centerCrop"
+            android:src="@drawable/avatar2"
+            app:layout_columnWeight="2"
+            app:layout_rowWeight="1" />
+
+        <ImageView
+            android:id="@+id/SelectableAvatarImage3"
+            android:layout_width="@dimen/selectable_avatar_side_length"
+            android:layout_height="@dimen/selectable_avatar_side_length"
+            android:onClick="selectAvatarImage"
+            android:padding="@dimen/grid_of_avatars_padding"
+            android:scaleType="centerCrop"
+            android:src="@drawable/avatar3"
+            app:layout_columnWeight="3"
+            app:layout_rowWeight="1" />
+
+        <ImageView
+            android:id="@+id/SelectableAvatarImage4"
+            android:layout_width="@dimen/selectable_avatar_side_length"
+            android:layout_height="@dimen/selectable_avatar_side_length"
+            android:onClick="selectAvatarImage"
+            android:padding="@dimen/grid_of_avatars_padding"
+            android:scaleType="centerCrop"
+            android:src="@drawable/avatar4"
+            app:layout_columnWeight="4"
+            app:layout_rowWeight="1" />
+
+        <ImageView
+            android:id="@+id/SelectableAvatarImage5"
+            android:layout_width="@dimen/selectable_avatar_side_length"
+            android:layout_height="@dimen/selectable_avatar_side_length"
+            android:onClick="selectAvatarImage"
+            android:padding="@dimen/grid_of_avatars_padding"
+            android:scaleType="centerCrop"
+            android:src="@drawable/avatar5"
+            app:layout_columnWeight="1"
+            app:layout_rowWeight="2" />
+
+        <ImageView
+            android:id="@+id/SelectableAvatarImage6"
+            android:layout_width="@dimen/selectable_avatar_side_length"
+            android:layout_height="@dimen/selectable_avatar_side_length"
+            android:onClick="selectAvatarImage"
+            android:padding="@dimen/grid_of_avatars_padding"
+            android:scaleType="centerCrop"
+            android:src="@drawable/avatar6"
+            app:layout_columnWeight="2"
+            app:layout_rowWeight="2" />
+
+        <ImageView
+            android:id="@+id/SelectableAvatarImage7"
+            android:layout_width="@dimen/selectable_avatar_side_length"
+            android:layout_height="@dimen/selectable_avatar_side_length"
+            android:onClick="selectAvatarImage"
+            android:padding="@dimen/grid_of_avatars_padding"
+            android:scaleType="centerCrop"
+            android:src="@drawable/avatar7"
+            app:layout_columnWeight="3"
+            app:layout_rowWeight="2" />
+
+        <ImageView
+            android:id="@+id/SelectableAvatarImage8"
+            android:layout_width="@dimen/selectable_avatar_side_length"
+            android:layout_height="@dimen/selectable_avatar_side_length"
+            android:onClick="selectAvatarImage"
+            android:padding="@dimen/grid_of_avatars_padding"
+            android:scaleType="centerCrop"
+            android:src="@drawable/avatar8"
+            app:layout_columnWeight="4"
+            app:layout_rowWeight="2" />
+
+        <ImageView
+            android:id="@+id/SelectableAvatarImage9"
+            android:layout_width="@dimen/selectable_avatar_side_length"
+            android:layout_height="@dimen/selectable_avatar_side_length"
+            android:onClick="selectAvatarImage"
+            android:padding="@dimen/grid_of_avatars_padding"
+            android:scaleType="centerCrop"
+            android:src="@drawable/avatar9"
+            app:layout_columnWeight="1"
+            app:layout_rowWeight="3" />
+
+        <ImageView
+            android:id="@+id/SelectableAvatarImage10"
+            android:layout_width="@dimen/selectable_avatar_side_length"
+            android:layout_height="@dimen/selectable_avatar_side_length"
+            android:onClick="selectAvatarImage"
+            android:padding="@dimen/grid_of_avatars_padding"
+            android:scaleType="centerCrop"
+            android:src="@drawable/avatar10"
+            app:layout_columnWeight="2"
+            app:layout_rowWeight="3" />
+
+        <ImageView
+            android:id="@+id/SelectableAvatarImage11"
+            android:layout_width="@dimen/selectable_avatar_side_length"
+            android:layout_height="@dimen/selectable_avatar_side_length"
+            android:onClick="selectAvatarImage"
+            android:padding="@dimen/grid_of_avatars_padding"
+            android:scaleType="centerCrop"
+            android:src="@drawable/avatar11"
+            app:layout_columnWeight="3"
+            app:layout_rowWeight="3" />
+
+        <ImageView
+            android:id="@+id/SelectableAvatarImage12"
+            android:layout_width="@dimen/selectable_avatar_side_length"
+            android:layout_height="@dimen/selectable_avatar_side_length"
+            android:onClick="selectAvatarImage"
+            android:padding="@dimen/grid_of_avatars_padding"
+            android:scaleType="centerCrop"
+            android:src="@drawable/avatar12"
+            app:layout_columnWeight="4"
+            app:layout_rowWeight="3" />
+
+        <ImageView
+            android:id="@+id/SelectableAvatarImage13"
+            android:layout_width="@dimen/selectable_avatar_side_length"
+            android:layout_height="@dimen/selectable_avatar_side_length"
+            android:onClick="selectAvatarImage"
+            android:padding="@dimen/grid_of_avatars_padding"
+            android:scaleType="centerCrop"
+            android:src="@drawable/avatar13"
+            app:layout_columnWeight="1"
+            app:layout_rowWeight="4" />
+
+        <ImageView
+            android:id="@+id/SelectableAvatarImage14"
+            android:layout_width="@dimen/selectable_avatar_side_length"
+            android:layout_height="@dimen/selectable_avatar_side_length"
+            android:onClick="selectAvatarImage"
+            android:padding="@dimen/grid_of_avatars_padding"
+            android:scaleType="centerCrop"
+            android:src="@drawable/avatar14"
+            app:layout_columnWeight="2"
+            app:layout_rowWeight="4" />
+
+        <ImageView
+            android:id="@+id/SelectableAvatarImage15"
+            android:layout_width="@dimen/selectable_avatar_side_length"
+            android:layout_height="@dimen/selectable_avatar_side_length"
+            android:onClick="selectAvatarImage"
+            android:padding="@dimen/grid_of_avatars_padding"
+            android:scaleType="centerCrop"
+            android:src="@drawable/avatar15"
+            app:layout_columnWeight="3"
+            app:layout_rowWeight="4" />
+
+        <ImageView
+            android:id="@+id/SelectableAvatarImage16"
+            android:layout_width="@dimen/selectable_avatar_side_length"
+            android:layout_height="@dimen/selectable_avatar_side_length"
+            android:onClick="selectAvatarImage"
+            android:padding="@dimen/grid_of_avatars_padding"
+            android:scaleType="centerCrop"
+            android:src="@drawable/avatar16"
+            app:layout_columnWeight="4"
+            app:layout_rowWeight="4" />
 
     </androidx.gridlayout.widget.GridLayout>
 
@@ -58,9 +240,10 @@
         android:imeOptions="actionNext"
         android:inputType="textEmailAddress"
         android:selectAllOnFocus="true"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/registration_title" />
+        app:layout_constraintTop_toBottomOf="@+id/imageViewAvatar" />
 
     <EditText
         android:id="@+id/registration_password"
