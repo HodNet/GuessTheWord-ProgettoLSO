@@ -62,7 +62,7 @@
         app:srcCompat="@drawable/empty_button" />
 
     <Button
-        android:id="@+id/CreateGameText"
+        android:id="@+id/CreateGameButton"
         android:layout_width="@dimen/main_button_width"
         android:layout_height="@dimen/main_button_height"
         android:text="@string/create_game_button_name"

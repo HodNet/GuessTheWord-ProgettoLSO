@@ -14,6 +14,8 @@
     <dimen name="main_button_width">192dp</dimen>
     <dimen name="main_button_height">64dp</dimen>
     <dimen name="main_button_font_size">22sp</dimen>
+    <dimen name="button_width">96dp</dimen>
+    <dimen name="button_height">48dp</dimen>
     <dimen name="icon_size">64dp</dimen>
 
     <!-- dimensions related to the game-->

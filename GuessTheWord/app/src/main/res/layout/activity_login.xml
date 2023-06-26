@@ -48,14 +48,16 @@
         app:layout_constraintTop_toBottomOf="@+id/login_email" />
 
     <Button
-        android:id="@+id/login_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="start"
+        android:id="@+id/sign_in_button"
+        android:layout_width="@dimen/button_width"
+        android:layout_height="@dimen/button_height"
         android:layout_marginTop="16dp"
         android:layout_marginBottom="64dp"
-        android:enabled="false"
+        android:gravity="center"
         android:text="@string/action_sign_in"
+        android:typeface="serif"
+        android:background="@drawable/empty_button"
+        android:enabled="false"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
