@@ -20,8 +20,9 @@ public class Player {
 
     /**
      * Constructor called to create the other players of the room
+     * @param avatar chosen between 16 images (must be a number between 1-16, you can use the MACROS of the User class)
      */
-    public Player(PlayerState state, int points, @NonNull String username, @NonNull ImageView avatar) {
+    public Player(PlayerState state, int points, @NonNull String username, int avatar) {
         this.state = state;
         this.points = points;
         user = new User(username, avatar);
@@ -29,8 +30,9 @@ public class Player {
 
     /**
      * Constructor called when a new player joins the room
+     * @param avatar chosen between 16 images (must be a number between 1-16, you can use the MACROS of the User class)
      */
-    public Player(@NonNull String username, @NonNull ImageView avatar) {
+    public Player(@NonNull String username, int avatar) {
         user = new User(username, avatar);
         state = null;
         points = 0;
@@ -66,7 +68,10 @@ public class Player {
         return user.getUsername();
     }
 
-    public ImageView getAvatar() {
+    /**
+     * @return avatar chosen between 16 images (a number between 1-16)
+     */
+    public int getAvatar() {
         return user.getAvatar();
     }
 

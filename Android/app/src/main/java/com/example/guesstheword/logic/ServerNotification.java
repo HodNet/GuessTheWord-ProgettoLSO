@@ -8,7 +8,7 @@ import androidx.annotation.NonNull;
  * siamo costretti a scriverlo in C che non supporta il polimorfismo, quindi accontentiamoci
  */
 /**
- * Notification from the server of a player joining or leaving the room
+ * Notification from the server or for the server of a player joining or leaving the room
  *
  */
 public class ServerNotification {
