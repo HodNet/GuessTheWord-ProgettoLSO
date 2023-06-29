@@ -46,7 +46,7 @@
 
     <!-- Grid of selectable images -->
     <androidx.gridlayout.widget.GridLayout
-        android:id="@+id/imageGrid"
+        android:id="@+id/avatarsGrid"
         android:layout_width="@dimen/grid_of_avatars_side_length"
         android:layout_height="@dimen/grid_of_avatars_side_length"
         android:visibility="gone"
@@ -288,5 +288,19 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/registration_repeat_password"
         app:layout_constraintVertical_bias="0.2" />
+
+    <ProgressBar
+        android:id="@+id/registration_loading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="64dp"
+        android:layout_marginBottom="64dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.3" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -7,9 +7,11 @@ import android.view.View;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.guesstheword.databinding.ActivityMenuBinding;
+import com.example.guesstheword.logic.User;
 
 public class MenuActivity extends AppCompatActivity {
     private ActivityMenuBinding binding;
+    private User mainUser;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -17,6 +19,9 @@ public class MenuActivity extends AppCompatActivity {
 
         binding = com.example.guesstheword.databinding.ActivityMenuBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+
+        Intent mIntent = getIntent();
+        mainUser = (User) mIntent.getParcelableExtra("mainUser");
     }
 
     public void goToFindGameActivity(View v) {

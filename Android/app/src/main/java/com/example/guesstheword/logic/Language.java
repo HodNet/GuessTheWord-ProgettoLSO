@@ -21,7 +21,7 @@ public enum Language {
             case GERMAN:
                 return "de";
             default:
-                return "";
+                return "en";
         }
     }
 }
