@@ -265,7 +265,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:hint="@string/prompt_repeat_password"
-        android:imeActionLabel="@string/action_sign_up"
+        android:imeActionLabel="@string/sign_up"
         android:imeOptions="actionDone"
         android:inputType="textVisiblePassword"
         android:selectAllOnFocus="true"
@@ -280,7 +280,7 @@
         android:layout_marginTop="16dp"
         android:layout_marginBottom="64dp"
         android:gravity="center"
-        android:text="@string/action_sign_up"
+        android:text="@string/sign_up"
         android:background="@drawable/rectangular_button"
         android:enabled="false"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -288,6 +288,30 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/registration_repeat_password"
         app:layout_constraintVertical_bias="0.2" />
+
+    <TextView
+        android:id="@+id/no_account_text_registration"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/no_account"
+        app:layout_constraintTop_toEndOf="@id/sign_up_button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@id/sign_up_button" />
+
+    <TextView
+        android:id="@+id/sign_in_link"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/sign_in"
+        android:autoLink="web"
+        android:linksClickable="true"
+        android:textColor="@color/colorTextLink"
+        android:selectAllOnFocus="true"
+        android:onClick="goToLoginActivity"
+        app:layout_constraintTop_toEndOf="@id/sign_up_button"
+        app:layout_constraintStart_toEndOf="@id/no_account_text_registration"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_chainStyle="packed"/>
 
     <ProgressBar
         android:id="@+id/registration_loading"

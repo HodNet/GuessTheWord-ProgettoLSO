@@ -14,6 +14,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.text.method.LinkMovementMethod;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
@@ -25,15 +26,20 @@ import android.widget.Toast;
 
 import com.example.guesstheword.R;
 import com.example.guesstheword.databinding.ActivityLoginBinding;
+import com.example.guesstheword.server.SocketManager;
 import com.example.guesstheword.ui.menu.MenuActivity;
+
+import java.io.IOException;
 
 public class LoginActivity extends AppCompatActivity {
 
     private LoginViewModel loginViewModel;
     private ActivityLoginBinding binding;
+    private SocketManager socketManager;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
 
         binding = ActivityLoginBinding.inflate(getLayoutInflater());
@@ -46,6 +52,15 @@ public class LoginActivity extends AppCompatActivity {
         final EditText passwordEditText = binding.loginPassword;
         final Button loginButton = binding.signInButton;
         final ProgressBar loadingProgressBar = binding.loading;
+        final TextView signUpLink = binding.signUpLink;
+
+        /* TODO: implementa la socket
+        try {
+            socketManager = new SocketManager();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        */
 
         loginViewModel.getLoginFormState().observe(this, new Observer<LoginFormState>() {
             @Override
@@ -137,6 +152,11 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void signIn() {
+        //TODO: fai in lower case l'email
+    }
 
+    public void goToRegistrationActivity(View view) {
+        Intent switchActivities = new Intent(this, RegistrationActivity.class);
+        startActivity(switchActivities);
     }
 }

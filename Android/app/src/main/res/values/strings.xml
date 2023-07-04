@@ -7,8 +7,8 @@
     <string name="prompt_username">Username</string>
     <string name="prompt_password">Password</string>
     <string name="prompt_repeat_password">Repeat password</string>
-    <string name="action_sign_in">Sign in</string>
-    <string name="action_sign_up">Sign up</string>
+    <string name="sign_in">Sign in</string>
+    <string name="sign_up">Sign up</string>
     <string name="welcome">"Welcome !"</string>
     <string name="invalid_email">Not a valid e-mail</string>
     <string name="invalid_username">Username must contains 1–30 letters, numbers and underscores, with a letter as first character</string>
@@ -17,6 +17,7 @@
     <string name="email_already_existent">This email is already registered, please login</string>
     <string name="username_already_taken">This username has already been taken</string>
     <string name="login_failed">"Login failed"</string>
+    <string name="no_account">No account? </string>
 
     <!-- Strings related to the home menu -->
     <string name="create_game_button_name">CREATE GAME</string>

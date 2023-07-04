@@ -1,5 +1,6 @@
 package com.example.guesstheword.ui.login;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -39,5 +40,12 @@ public class RegistrationActivity extends AppCompatActivity {
         });
     }
 
-    private void updateUiWithUser()
+    private void updateUiWithUser() {
+        //TODO
+    }
+
+    public void goToLoginActivity(View view) {
+        Intent switchActivities = new Intent(this, LoginActivity.class);
+        startActivity(switchActivities);
+    }
 }
